@@ -19,7 +19,12 @@ namespace Functional
             return Functions.Map( self, new List< U >(), f ).ToArray();
         }
 
-        public static U[] CompactMap< T, U >( this T[] self, Func< T, U > f )
+        public static U[] CompactMap< T, U >( this T[] self, Func< T, U? > f ) where U: class
+        {
+            return Functions.CompactMap( self, new List< U >(), f ).ToArray();
+        }
+
+        public static U[] CompactMap< T, U >( this T[] self, Func< T, U? > f ) where U: struct
         {
             return Functions.CompactMap( self, new List< U >(), f ).ToArray();
         }

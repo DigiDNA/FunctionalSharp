@@ -19,7 +19,12 @@ namespace Functional
             return Functions.Map( self, new HashSet< U >(), f );
         }
 
-        public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U > f )
+        public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U? > f ) where U: class
+        {
+            return Functions.CompactMap( self, new HashSet< U >(), f );
+        }
+
+        public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U? > f ) where U: struct
         {
             return Functions.CompactMap( self, new HashSet< U >(), f );
         }

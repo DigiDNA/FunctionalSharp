@@ -39,7 +39,35 @@ namespace Functional
             return destination;
         }
 
-        internal static R CompactMap< T, U, R >( ICollection< T > source, R destination, Func< T, U > f ) where R: ICollection< U >
+        internal static R CompactMap< T, U, R >( ICollection< T > source, R destination, Func< T, U? > f ) where R: ICollection< U > where U: class
+        {
+            if( source == null )
+            {
+                throw new ArgumentNullException( nameof( source ) );
+            }
+
+            if( destination == null )
+            {
+                throw new ArgumentNullException( nameof( destination ) );
+            }
+
+            if( f == null )
+            {
+                throw new ArgumentNullException( nameof( f ) );
+            }
+
+            foreach( T o in source )
+            {
+                if( f( o ) is U u )
+                {
+                    destination.Add( u );
+                }
+            }
+
+            return destination;
+        }
+
+        internal static R CompactMap< T, U, R >( ICollection< T > source, R destination, Func< T, U? > f ) where R: ICollection< U > where U: struct
         {
             if( source == null )
             {

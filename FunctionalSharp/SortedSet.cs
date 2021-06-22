@@ -19,7 +19,12 @@ namespace Functional
             return Functions.Map( self, new SortedSet< U >(), f );
         }
 
-        public static SortedSet< U > CompactMap< T, U >( this SortedSet< T > self, Func< T, U > f )
+        public static SortedSet< U > CompactMap< T, U >( this SortedSet< T > self, Func< T, U? > f ) where U: class
+        {
+            return Functions.CompactMap( self, new SortedSet< U >(), f );
+        }
+
+        public static SortedSet< U > CompactMap< T, U >( this SortedSet< T > self, Func< T, U? > f ) where U: struct
         {
             return Functions.CompactMap( self, new SortedSet< U >(), f );
         }

@@ -19,7 +19,12 @@ namespace Functional
             return Functions.Map( self, new LinkedList< U >(), f );
         }
 
-        public static LinkedList< U > CompactMap< T, U >( this LinkedList< T > self, Func< T, U > f )
+        public static LinkedList< U > CompactMap< T, U >( this LinkedList< T > self, Func< T, U? > f ) where U: class
+        {
+            return Functions.CompactMap( self, new LinkedList< U >(), f );
+        }
+
+        public static LinkedList< U > CompactMap< T, U >( this LinkedList< T > self, Func< T, U? > f ) where U: struct
         {
             return Functions.CompactMap( self, new LinkedList< U >(), f );
         }
