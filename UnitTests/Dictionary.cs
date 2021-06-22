@@ -86,6 +86,28 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void TestCompactMapValues_Reference()
+        {
+            Dictionary< string, int >    input  = new Dictionary< string, int > { { "foo", 0 }, { "bar", 42 } };
+            Dictionary< string, string > output = input.CompactMapValues( ( o ) => ( o.Key == "foo" ) ? null : o.Value.ToString() );
+
+            Assert.AreEqual( 1, output.Count );
+            Assert.IsTrue( output.ContainsKey( "bar" ) );
+            Assert.AreEqual( "42", output[ "bar" ] );
+        }
+
+        [TestMethod]
+        public void TestCompactMapValues_Value()
+        {
+            Dictionary< string, int > input  = new Dictionary< string, int > { { "foo", 0 }, { "bar", 42 } };
+            Dictionary< string, int > output = input.CompactMapValues( ( o ) => ( o.Key == "foo" ) ? ( int? )null : o.Value );
+
+            Assert.AreEqual( 1, output.Count );
+            Assert.IsTrue( output.ContainsKey( "bar" ) );
+            Assert.AreEqual( 42, output[ "bar" ] );
+        }
+
+        [TestMethod]
         public void TestFilter()
         {
             Dictionary< string, int > input  = new Dictionary< string, int > { { "foo", 0 }, { "bar", 42 }, { "hello", 1 }, { "world", 2 } };
