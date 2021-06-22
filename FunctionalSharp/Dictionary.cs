@@ -41,6 +41,31 @@ namespace Functional
             return Functions.Map( self, new List< U >(), f );
         }
 
+        public static List< U > FlatMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, ICollection< U > > f ) where TK : notnull where TV: System.Collections.ICollection
+        {
+            if( self == null )
+            {
+                throw new ArgumentNullException( nameof( self ) );
+            }
+
+            if( f == null )
+            {
+                throw new ArgumentNullException( nameof( f ) );
+            }
+
+            List< U > destination = new List< U >();
+
+            foreach( KeyValuePair< TK, TV > p in self )
+            {
+                foreach( U o in f( p ) )
+                {
+                    destination.Add( o );
+                }
+            }
+
+            return destination;
+        }
+
         public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: class
         {
             return Functions.CompactMap( self, new List< U >(), f );

@@ -39,6 +39,31 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void TestFlatMap()
+        {
+            LinkedList< int[] > input = new LinkedList< int[] >();
+
+            input.AddLast( new int[] { 0, 1 } );
+            input.AddLast( new int[] { 2 } );
+            input.AddLast( new int[] { 42 } );
+            
+            LinkedList< int >    output1 = input.FlatMap( ( s ) => s );
+            LinkedList< string > output2 = input.FlatMap( ( s ) => s.Map( ( o ) => o.ToString() ) );
+
+            Assert.AreEqual( 4, output1.Count );
+            Assert.IsTrue( output1.Contains( 0 ) );
+            Assert.IsTrue( output1.Contains( 1 ) );
+            Assert.IsTrue( output1.Contains( 2 ) );
+            Assert.IsTrue( output1.Contains( 42 ) );
+
+            Assert.AreEqual( 4, output2.Count );
+            Assert.IsTrue( output2.Contains( "0" ) );
+            Assert.IsTrue( output2.Contains( "1" ) );
+            Assert.IsTrue( output2.Contains( "2" ) );
+            Assert.IsTrue( output2.Contains( "42" ) );
+        }
+
+        [TestMethod]
         public void TestCompactMap_Reference()
         {
             LinkedList< int > input = new LinkedList< int >();

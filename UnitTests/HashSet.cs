@@ -19,6 +19,19 @@ namespace UnitTests
     [ TestClass ]
     public class HashSet
     {
+        private class Comparer: EqualityComparer< int[] >
+        {
+            public override bool Equals( int[]? x, int[]? y )
+            {
+                return false;
+            }
+
+            public override int GetHashCode( int[] obj )
+            {
+                return obj[ 0 ];
+            }
+        }
+
         [TestMethod]
         public void TestMap()
         {
@@ -30,6 +43,26 @@ namespace UnitTests
             Assert.IsTrue( output.Contains( "1" ) );
             Assert.IsTrue( output.Contains( "2" ) );
             Assert.IsTrue( output.Contains( "42" ) );
+        }
+
+        [TestMethod]
+        public void TestFlatMap()
+        {
+            HashSet< int[] >  input    = new HashSet< int[] >( new Comparer() ) { new int[] { 0, 1 }, new int[] { 2 }, new int[] { 42 } };
+            HashSet< int >    output1  = input.FlatMap( ( s ) => s );
+            HashSet< string > output2  = input.FlatMap( ( s ) => s.Map( ( o ) => o.ToString() ) );
+
+            Assert.AreEqual( 4, output1.Count );
+            Assert.IsTrue( output1.Contains( 0 ) );
+            Assert.IsTrue( output1.Contains( 1 ) );
+            Assert.IsTrue( output1.Contains( 2 ) );
+            Assert.IsTrue( output1.Contains( 42 ) );
+
+            Assert.AreEqual( 4, output2.Count );
+            Assert.IsTrue( output2.Contains( "0" ) );
+            Assert.IsTrue( output2.Contains( "1" ) );
+            Assert.IsTrue( output2.Contains( "2" ) );
+            Assert.IsTrue( output2.Contains( "42" ) );
         }
 
         [TestMethod]

@@ -33,6 +33,26 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void TestFlatMap()
+        {
+            int[][]  input   = new int[][] { new int[] { 0, 1 }, new int[] { 2 }, new int[] { 42 } };
+            int[]    output1 = input.FlatMap( ( s ) => s );
+            string[] output2 = input.FlatMap( ( s ) => s.Map( ( o ) => o.ToString() ) );
+            
+            Assert.AreEqual( 4,  output1.Length );
+            Assert.AreEqual( 0,  output1[ 0 ] );
+            Assert.AreEqual( 1,  output1[ 1 ] );
+            Assert.AreEqual( 2,  output1[ 2 ] );
+            Assert.AreEqual( 42, output1[ 3 ] );
+
+            Assert.AreEqual( 4,    output2.Length );
+            Assert.AreEqual( "0",  output2[ 0 ] );
+            Assert.AreEqual( "1",  output2[ 1 ] );
+            Assert.AreEqual( "2",  output2[ 2 ] );
+            Assert.AreEqual( "42", output2[ 3 ] );
+        }
+
+        [TestMethod]
         public void TestCompactMap_Reference()
         {
             int[]    input  = new int[] { 0, 1, 2, 42 };

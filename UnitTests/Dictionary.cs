@@ -44,6 +44,26 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void TestFlatMap()
+        {
+            Dictionary< int, int[] > input   = new Dictionary< int, int[] > { { 0, new int[] { 0, 1 } }, { 1, new int[] { 2 } }, { 2, new int[] { 42 } } };
+            List< int >              output1 = input.FlatMap( ( s ) => s.Value );
+            List< string >           output2 = input.FlatMap( ( s ) => s.Value.Map( ( o ) => o.ToString() ) );
+            
+            Assert.AreEqual( 4, output1.Count );
+            Assert.IsTrue( output1.Contains( 0 ) );
+            Assert.IsTrue( output1.Contains( 1 ) );
+            Assert.IsTrue( output1.Contains( 2 ) );
+            Assert.IsTrue( output1.Contains( 42 ) );
+
+            Assert.AreEqual( 4, output2.Count );
+            Assert.IsTrue( output2.Contains( "0" ) );
+            Assert.IsTrue( output2.Contains( "1" ) );
+            Assert.IsTrue( output2.Contains( "2" ) );
+            Assert.IsTrue( output2.Contains( "42" ) );
+        }
+
+        [TestMethod]
         public void TestCompactMap_Reference()
         {
             Dictionary< string, int > input  = new Dictionary< string, int > { { "foo", 0 }, { "bar", 42 }, { "hello", 1 }, { "world", 2 } };

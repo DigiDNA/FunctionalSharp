@@ -19,6 +19,11 @@ namespace Functional
             return Functions.Map( self, new List< U >(), f );
         }
 
+        public static List< U > FlatMap< T, U >( this List< T > self, Func< T, ICollection< U > > f ) where T: System.Collections.ICollection
+        {
+            return Functions.FlatMap( self, new List< U >(), f );
+        }
+
         public static List< U > CompactMap< T, U >( this List< T > self, Func< T, U? > f ) where U: class
         {
             return Functions.CompactMap( self, new List< U >(), f );

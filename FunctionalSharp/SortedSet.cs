@@ -19,6 +19,11 @@ namespace Functional
             return Functions.Map( self, new SortedSet< U >(), f );
         }
 
+        public static SortedSet< U > FlatMap< T, U >( this SortedSet< T > self, Func< T, ICollection< U > > f ) where T: System.Collections.ICollection
+        {
+            return Functions.FlatMap( self, new SortedSet< U >(), f );
+        }
+
         public static SortedSet< U > CompactMap< T, U >( this SortedSet< T > self, Func< T, U? > f ) where U: class
         {
             return Functions.CompactMap( self, new SortedSet< U >(), f );

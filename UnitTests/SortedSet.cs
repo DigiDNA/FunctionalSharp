@@ -33,6 +33,27 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void TestFlatMap()
+        {
+            IComparer< int[] >  comparer = Comparer< int[] >.Create( ( o1, o2 ) => o1[ 0 ] );
+            SortedSet< int[] >  input    = new SortedSet< int[] >( comparer ) { new int[] { 0, 1 }, new int[] { 2 }, new int[] { 42 } };
+            SortedSet< int >    output1  = input.FlatMap( ( s ) => s );
+            SortedSet< string > output2  = input.FlatMap( ( s ) => s.Map( ( o ) => o.ToString() ) );
+
+            Assert.AreEqual( 4, output1.Count );
+            Assert.IsTrue( output1.Contains( 0 ) );
+            Assert.IsTrue( output1.Contains( 1 ) );
+            Assert.IsTrue( output1.Contains( 2 ) );
+            Assert.IsTrue( output1.Contains( 42 ) );
+
+            Assert.AreEqual( 4, output2.Count );
+            Assert.IsTrue( output2.Contains( "0" ) );
+            Assert.IsTrue( output2.Contains( "1" ) );
+            Assert.IsTrue( output2.Contains( "2" ) );
+            Assert.IsTrue( output2.Contains( "42" ) );
+        }
+
+        [TestMethod]
         public void TestCompactMap_Reference()
         {
             SortedSet< int >    input  = new SortedSet< int > { 0, 1, 2, 42 };
