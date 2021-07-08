@@ -14,7 +14,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Functional;
 
-namespace UnitTests
+namespace FunctionalSharp_Test
 {
     [ TestClass ]
     public class SortedSet
