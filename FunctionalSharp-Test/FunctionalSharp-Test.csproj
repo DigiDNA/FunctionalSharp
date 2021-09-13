@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net462;netcoreapp3.1;net5.0-windows</TargetFrameworks>
-    <RootNamespace>UnitTests</RootNamespace>
+    <RootNamespace>FunctionalSharp_Test</RootNamespace>
     <IsPackable>false</IsPackable>
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
