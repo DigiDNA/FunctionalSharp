@@ -1,12 +1,11 @@
 FunctionalSharp
 ===============
 
-[![Build Status](https://img.shields.io/travis/DigiDNA/FunctionalSharp.svg?branch=master&style=flat)](https://travis-ci.org/DigiDNA/FunctionalSharp)
-[![Coverage Status](https://img.shields.io/coveralls/DigiDNA/FunctionalSharp.svg?branch=master&style=flat)](https://coveralls.io/r/DigiDNA/FunctionalSharp?branch=master)
-[![Issues](http://img.shields.io/github/issues/DigiDNA/FunctionalSharp.svg?style=flat)](https://github.com/DigiDNA/FunctionalSharp/issues)
-![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
-![License](https://img.shields.io/badge/license-rroprietary-red.svg?style=flat)
-[![Contact](https://img.shields.io/badge/contact-@DigiDNA-blue.svg?style=flat)](https://twitter.com/DigiDNA)
+[![Build Status](https://img.shields.io/github/workflow/status/DigiDNA/FunctionalSharp/ci-win?label=Windows&logo=windows)](https://github.com/DigiDNA/FunctionalSharp/actions/workflows/ci-win.yaml)
+[![Issues](http://img.shields.io/github/issues/DigiDNA/FunctionalSharp.svg?logo=github)](https://github.com/DigiDNA/FunctionalSharp/issues)
+![Status](https://img.shields.io/badge/status-active-brightgreen.svg?logo=git)
+![License](https://img.shields.io/badge/license-proprietary-orange.svg?logo=open-source-initiative)  
+[![Contact](https://img.shields.io/badge/follow-@DigiDNA-blue.svg?logo=twitter&style=social)](https://twitter.com/DigiDNA)
 
 About
 -----
