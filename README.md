@@ -15,11 +15,7 @@ About
 License
 -------
 
-> Copyright (c) 2021, DigiDNA - www.imazing.com  
-> All rights reserved
-> 
-> **Unauthorised copying of this copyrighted work, via any medium is strictly prohibited.  
-> Proprietary and confidential.**
+Project is released under the terms of the MIT License.
 
 Repository Infos
 ----------------
