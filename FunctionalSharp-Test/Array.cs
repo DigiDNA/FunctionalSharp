@@ -102,7 +102,7 @@ namespace FunctionalSharp_Test
             int[] input  = new int[] { 42, 1, 2, 0 };
             int[] sorted = input.Sorted( ( i1, i2 ) => i1 < i2 );
 
-            Assert.AreEqual( input.Count, sorted.Count );
+            Assert.AreEqual( input.Length, sorted.Length );
             
             Assert.AreEqual( 42, input[ 0 ] );
             Assert.AreEqual(  1, input[ 1 ] );
