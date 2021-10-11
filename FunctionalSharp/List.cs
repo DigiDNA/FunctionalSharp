@@ -43,5 +43,20 @@ namespace Functional
         {
             return Functions.Reduce( self, initialResult, f );
         }
+
+        public static List< T > Sorted< T >( this List< T > self, Func< T, T, bool > predicate )
+        {
+            List< T > copy = new List< T >( self );
+
+            copy.Sort
+            (
+                delegate( T o1, T o2 )
+                {
+                    return predicate( o1, o2 ) ? -1 : 1;
+                }
+            );
+
+            return copy;
+        }
     }
 }

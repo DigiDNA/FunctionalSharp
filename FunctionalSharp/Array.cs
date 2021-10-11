@@ -43,5 +43,21 @@ namespace Functional
         {
             return Functions.Reduce( self, initialResult, f );
         }
+
+        public static T[] Sorted< T >( this T[] self, Func< T, T, bool > predicate )
+        {
+            T[] copy = ( T[] )self.Clone();
+
+            Array.Sort
+            (
+                copy,
+                delegate( T o1, T o2 )
+                {
+                    return predicate( o1, o2 ) ? -1 : 1;
+                }
+            );
+
+            return copy;
+        }
     }
 }
