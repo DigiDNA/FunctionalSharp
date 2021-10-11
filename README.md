@@ -14,55 +14,67 @@ A set of convenience functional-style utilities to make C# code more similar to 
 
 ### Array:
 
-    U[] Map       < T, U >( Func< T, U > f )
-    U[] FlatMap   < T, U >( Func< T, ICollection< U > > f )
-    U[] CompactMap< T, U >( Func< T, U? > f )
-    T[] Filter    < T    >( Func< T, bool > f )
-    U   Reduce    < T, U >( U initialResult, Func< U, T, U > f )
-    T[] Sorted    < T    >( Func< T, T, bool > predicate )
+```cs
+U[] Map       < T, U >( Func< T, U > f )
+U[] FlatMap   < T, U >( Func< T, ICollection< U > > f )
+U[] CompactMap< T, U >( Func< T, U? > f )
+T[] Filter    < T    >( Func< T, bool > f )
+U   Reduce    < T, U >( U initialResult, Func< U, T, U > f )
+T[] Sorted    < T    >( Func< T, T, bool > predicate )
+```
 
 ### Dictionary:
 
-    Dictionary< TK, U >  MapValues       < TK, TV, U >( Func< KeyValuePair< TK, TV >, U > f )
-    List< U >            Map             < TK, TV, U >( Func< KeyValuePair< TK, TV >, U > f )
-    List< U >            FlatMap         < TK, TV, U >( Func< KeyValuePair< TK, TV >, ICollection< U > > f )
-    List< U >            CompactMap      < TK, TV, U >( Func< KeyValuePair< TK, TV >, U? > f )
-    Dictionary< TK, U >  CompactMapValues< TK, TV, U >( Func< KeyValuePair< TK, TV >, U? > f )
-    Dictionary< TK, TV > Filter          < TK, TV    >( Func< KeyValuePair< TK, TV >, bool > f )
-    U                    Reduce          < TK, TV, U >( U initialResult, Func< U, KeyValuePair< TK, TV >, U > f )
+```cs
+Dictionary< TK, U >  MapValues       < TK, TV, U >( Func< KeyValuePair< TK, TV >, U > f )
+List< U >            Map             < TK, TV, U >( Func< KeyValuePair< TK, TV >, U > f )
+List< U >            FlatMap         < TK, TV, U >( Func< KeyValuePair< TK, TV >, ICollection< U > > f )
+List< U >            CompactMap      < TK, TV, U >( Func< KeyValuePair< TK, TV >, U? > f )
+Dictionary< TK, U >  CompactMapValues< TK, TV, U >( Func< KeyValuePair< TK, TV >, U? > f )
+Dictionary< TK, TV > Filter          < TK, TV    >( Func< KeyValuePair< TK, TV >, bool > f )
+U                    Reduce          < TK, TV, U >( U initialResult, Func< U, KeyValuePair< TK, TV >, U > f )
+```
 
 ### HashSet:
 
-    HashSet< U > Map       < T, U >( Func< T, U > f )
-    HashSet< U > FlatMap   < T, U >( Func< T, ICollection< U > > f )
-    HashSet< U > CompactMap< T, U >( Func< T, U? > f )
-    HashSet< T > Filter    < T    >( Func< T, bool > f )
-    U            Reduce    < T, U >( U initialResult, Func< U, T, U > f )
+```cs
+HashSet< U > Map       < T, U >( Func< T, U > f )
+HashSet< U > FlatMap   < T, U >( Func< T, ICollection< U > > f )
+HashSet< U > CompactMap< T, U >( Func< T, U? > f )
+HashSet< T > Filter    < T    >( Func< T, bool > f )
+U            Reduce    < T, U >( U initialResult, Func< U, T, U > f )
+```
 
 ### LinkedList:
 
-    LinkedList< U > Map       < T, U >( Func< T, U > f )
-    LinkedList< U > FlatMap   < T, U >( Func< T, ICollection< U > > f )
-    LinkedList< U > CompactMap< T, U >( Func< T, U? > f )
-    LinkedList< T > Filter    < T    >( Func< T, bool > f )
-    U               Reduce    < T, U >( U initialResult, Func< U, T, U > f )
+```cs
+LinkedList< U > Map       < T, U >( Func< T, U > f )
+LinkedList< U > FlatMap   < T, U >( Func< T, ICollection< U > > f )
+LinkedList< U > CompactMap< T, U >( Func< T, U? > f )
+LinkedList< T > Filter    < T    >( Func< T, bool > f )
+U               Reduce    < T, U >( U initialResult, Func< U, T, U > f )
+```
 
 ### List:
 
-    List< U > Map       < T, U >( Func< T, U > f )
-    List< U > FlatMap   < T, U >( Func< T, ICollection< U > > f )
-    List< U > CompactMap< T, U >( Func< T, U? > f )
-    List< T > Filter    < T    >( Func< T, bool > f )
-    U         Reduce    < T, U >( U initialResult, Func< U, T, U > f )
-    List< T > Sorted    < T    >( Func< T, T, bool > predicate )
+```cs
+List< U > Map       < T, U >( Func< T, U > f )
+List< U > FlatMap   < T, U >( Func< T, ICollection< U > > f )
+List< U > CompactMap< T, U >( Func< T, U? > f )
+List< T > Filter    < T    >( Func< T, bool > f )
+U         Reduce    < T, U >( U initialResult, Func< U, T, U > f )
+List< T > Sorted    < T    >( Func< T, T, bool > predicate )
+```
 
 ### SortedSet:
 
-    SortedSet< U > Map       < T, U >( Func< T, U > f )
-    SortedSet< U > FlatMap   < T, U >( Func< T, ICollection< U > > f )
-    SortedSet< U > CompactMap< T, U >( Func< T, U? > f )
-    SortedSet< T > Filter    < T    >( Func< T, bool > f )
-    U              Reduce    < T, U >( U initialResult, Func< U, T, U > f )
+```cs
+SortedSet< U > Map       < T, U >( Func< T, U > f )
+SortedSet< U > FlatMap   < T, U >( Func< T, ICollection< U > > f )
+SortedSet< U > CompactMap< T, U >( Func< T, U? > f )
+SortedSet< T > Filter    < T    >( Func< T, bool > f )
+U              Reduce    < T, U >( U initialResult, Func< U, T, U > f )
+```
 
 License
 -------
