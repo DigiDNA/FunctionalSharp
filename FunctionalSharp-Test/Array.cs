@@ -95,5 +95,24 @@ namespace FunctionalSharp_Test
             Assert.AreEqual( 45, res1 );
             Assert.AreEqual( 46, res2 );
         }
+
+        [TestMethod]
+        public void TestSorted()
+        {
+            int[] input  = new int[] { 42, 1, 2, 0 };
+            int[] sorted = input.Sorted( ( i1, i2 ) => i1 < i2 );
+
+            Assert.AreEqual( input.Length, sorted.Length );
+            
+            Assert.AreEqual( 42, input[ 0 ] );
+            Assert.AreEqual(  1, input[ 1 ] );
+            Assert.AreEqual(  2, input[ 2 ] );
+            Assert.AreEqual(  0, input[ 3 ] );
+            
+            Assert.AreEqual(  0, sorted[ 0 ] );
+            Assert.AreEqual(  1, sorted[ 1 ] );
+            Assert.AreEqual(  2, sorted[ 2 ] );
+            Assert.AreEqual( 42, sorted[ 3 ] );
+        }
     }
 }
