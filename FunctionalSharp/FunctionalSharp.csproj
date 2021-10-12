@@ -12,6 +12,7 @@
         <Description>A set of convenience functional-style utilities to make C# code more similar to Swift.</Description>
         <RepositoryUrl>https://github.com/DigiDNA/FunctionalSharp</RepositoryUrl>
         <PackageProjectUrl>https://github.com/DigiDNA/FunctionalSharp</PackageProjectUrl>
+        <Version>2.0.0</Version>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
