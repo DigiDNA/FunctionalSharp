@@ -7,6 +7,11 @@
         <LangVersion>8.0</LangVersion>
         <Nullable>enable</Nullable>
         <WarningsAsErrors>nullable;CS8600;CS8602;CS8603;CS8625</WarningsAsErrors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReleaseNotes></PackageReleaseNotes>
+        <Description>A set of convenience functional-style utilities to make C# code more similar to Swift.</Description>
+        <RepositoryUrl>https://github.com/DigiDNA/FunctionalSharp</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/DigiDNA/FunctionalSharp</PackageProjectUrl>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
