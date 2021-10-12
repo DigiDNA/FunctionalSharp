@@ -43,7 +43,12 @@ namespace Functional
 
         public Left( TLeft value )
         {
-            this.Value = value ?? throw new ArgumentNullException( nameof( value ) );
+            if( value == null )
+            {
+                throw new ArgumentNullException( nameof( value ) );
+            }
+
+            this.Value = value;
         }
     }
 
@@ -57,7 +62,12 @@ namespace Functional
 
         public Right( TRight value )
         {
-            this.Value = value ?? throw new ArgumentNullException( nameof( value ) );
+            if( value == null )
+            {
+                throw new ArgumentNullException( nameof( value ) );
+            }
+
+            this.Value = value;
         }
     }
 }

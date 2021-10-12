@@ -36,7 +36,7 @@ namespace FunctionalSharp_Test
     {
         private class Comparer: EqualityComparer< int[] >
         {
-            public override bool Equals( int[]? x, int[]? y )
+            public override bool Equals( int[] x, int[] y )
             {
                 return false;
             }

@@ -29,7 +29,7 @@ namespace Functional
 {
     public static class DictionaryExtensions
     {
-        public static Dictionary< TK, U > MapValues< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f ) where TK: notnull
+        public static Dictionary< TK, U > MapValues< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f )
         {
             if( self == null )
             {
@@ -51,12 +51,12 @@ namespace Functional
             return destination;
         }
 
-        public static List< U > Map< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f ) where TK : notnull
+        public static List< U > Map< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f )
         {
             return Functions.Map( self, new List< U >(), f );
         }
 
-        public static List< U > FlatMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, ICollection< U > > f ) where TK : notnull where TV: System.Collections.ICollection
+        public static List< U > FlatMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, ICollection< U > > f ) where TV: System.Collections.ICollection
         {
             if( self == null )
             {
@@ -81,17 +81,17 @@ namespace Functional
             return destination;
         }
 
-        public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: class
+        public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f ) where U: class
         {
             return Functions.CompactMap( self, new List< U >(), f );
         }
 
-        public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: struct
+        public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where U: struct
         {
             return Functions.CompactMap( self, new List< U >(), f );
         }
 
-        public static Dictionary< TK, U > CompactMapValues< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK: notnull where U: class
+        public static Dictionary< TK, U > CompactMapValues< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f ) where U: class
         {
             if( self == null )
             {
@@ -116,7 +116,7 @@ namespace Functional
             return destination;
         }
 
-        public static Dictionary< TK, U > CompactMapValues< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK: notnull where U: struct
+        public static Dictionary< TK, U > CompactMapValues< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where U: struct
         {
             if( self == null )
             {
@@ -141,12 +141,12 @@ namespace Functional
             return destination;
         }
 
-        public static Dictionary< TK, TV > Filter< TK, TV >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, bool > f ) where TK : notnull
+        public static Dictionary< TK, TV > Filter< TK, TV >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, bool > f )
         {
             return Functions.Filter( self, new Dictionary< TK, TV >(), f );
         }
 
-        public static U Reduce< TK, TV, U >( this Dictionary< TK, TV > self, U initialResult, Func< U, KeyValuePair< TK, TV >, U > f ) where TK : notnull
+        public static U Reduce< TK, TV, U >( this Dictionary< TK, TV > self, U initialResult, Func< U, KeyValuePair< TK, TV >, U > f )
         {
             return Functions.Reduce( self, initialResult, f );
         }

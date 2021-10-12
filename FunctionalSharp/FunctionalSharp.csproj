@@ -1,12 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net462;netcoreapp3.1;net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net462</TargetFrameworks>
         <Authors>DigiDNA</Authors>
         <Copyright>Copyright ©  2019</Copyright>
-        <LangVersion>8.0</LangVersion>
-        <Nullable>enable</Nullable>
-        <WarningsAsErrors>nullable;CS8600;CS8602;CS8603;CS8625</WarningsAsErrors>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

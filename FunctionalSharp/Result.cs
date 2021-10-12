@@ -43,7 +43,12 @@ namespace Functional
 
         public Success( TSuccess value )
         {
-            this.Value = value ?? throw new ArgumentNullException( nameof( value ) );
+            if( value == null )
+            {
+                throw new ArgumentNullException( nameof( value ) );
+            }
+
+            this.Value = value;
         }
     }
 
@@ -57,7 +62,12 @@ namespace Functional
 
         public Error( TError value )
         {
-            this.Value = value ?? throw new ArgumentNullException( nameof( value ) );
+            if( value == null )
+            {
+                throw new ArgumentNullException( nameof( value ) );
+            }
+
+            this.Value = value;
         }
     }
 }

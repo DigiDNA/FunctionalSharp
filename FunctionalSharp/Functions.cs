@@ -85,7 +85,7 @@ namespace Functional
             return destination;
         }
 
-        internal static R CompactMap< T, U, R >( ICollection< T > source, R destination, Func< T, U? > f ) where R: ICollection< U > where U: class
+        internal static R CompactMap< T, U, R >( ICollection< T > source, R destination, Func< T, U > f ) where R: ICollection< U > where U: class
         {
             if( source == null )
             {
