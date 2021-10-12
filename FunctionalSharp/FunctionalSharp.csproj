@@ -4,6 +4,11 @@
         <TargetFrameworks>net462</TargetFrameworks>
         <Authors>DigiDNA</Authors>
         <Copyright>Copyright ©  2019</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReleaseNotes></PackageReleaseNotes>
+        <Description>A set of convenience functional-style utilities to make C# code more similar to Swift.</Description>
+        <RepositoryUrl>https://github.com/DigiDNA/FunctionalSharp</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/DigiDNA/FunctionalSharp</PackageProjectUrl>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
