@@ -54,7 +54,7 @@ namespace Functional
             return destination;
         }
 
-        internal static R FlatMap< T, U, R >( ICollection< T > source, R destination, Func< T, ICollection< U > > f ) where R: ICollection< U > where T: System.Collections.ICollection
+        internal static R FlatMap< T, U, R >( ICollection< T > source, R destination, Func< T, ICollection< U > > f ) where R: ICollection< U >
         {
             if( source == null )
             {

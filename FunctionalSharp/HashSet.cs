@@ -34,7 +34,7 @@ namespace Functional
             return Functions.Map( self, new HashSet< U >(), f );
         }
 
-        public static HashSet< U > FlatMap< T, U >( this HashSet< T > self, Func< T, ICollection< U > > f ) where T: System.Collections.ICollection
+        public static HashSet< U > FlatMap< T, U >( this HashSet< T > self, Func< T, ICollection< U > > f )
         {
             return Functions.FlatMap( self, new HashSet< U >(), f );
         }

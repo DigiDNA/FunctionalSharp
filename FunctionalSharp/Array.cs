@@ -34,7 +34,7 @@ namespace Functional
             return Functions.Map( self, new List< U >(), f ).ToArray();
         }
 
-        public static U[] FlatMap< T, U >( this T[] self, Func< T, ICollection< U > > f ) where T: System.Collections.ICollection
+        public static U[] FlatMap< T, U >( this T[] self, Func< T, ICollection< U > > f )
         {
             return Functions.FlatMap( self, new List< U >(), f ).ToArray();
         }
