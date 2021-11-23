@@ -34,7 +34,7 @@ namespace Functional
             return Functions.Map( self, new LinkedList< U >(), f );
         }
 
-        public static LinkedList< U > FlatMap< T, U >( this LinkedList< T > self, Func< T, ICollection< U > > f ) where T: System.Collections.ICollection
+        public static LinkedList< U > FlatMap< T, U >( this LinkedList< T > self, Func< T, ICollection< U > > f )
         {
             return Functions.FlatMap( self, new LinkedList< U >(), f );
         }

@@ -56,7 +56,7 @@ namespace Functional
             return Functions.Map( self, new List< U >(), f );
         }
 
-        public static List< U > FlatMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, ICollection< U > > f ) where TK : notnull where TV: System.Collections.ICollection
+        public static List< U > FlatMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, ICollection< U > > f ) where TK : notnull
         {
             if( self == null )
             {
