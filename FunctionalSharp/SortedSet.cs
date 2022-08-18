@@ -29,34 +29,16 @@ namespace Functional
 {
     public static class SortedSetExtensions
     {
-        public static SortedSet< U > Map< T, U >( this SortedSet< T > self, Func< T, U > f )
-        {
-            return Internal.Map( self, new SortedSet< U >(), f );
-        }
+        public static SortedSet< U > Map< T, U >( this SortedSet< T > self, Func< T, U > f ) => Internal.Map( self, new SortedSet< U >(), f );
 
-        public static SortedSet< U > FlatMap< T, U >( this SortedSet< T > self, Func< T, ICollection< U > > f )
-        {
-            return Internal.FlatMap( self, new SortedSet< U >(), f );
-        }
+        public static SortedSet< U > FlatMap< T, U >( this SortedSet< T > self, Func< T, ICollection< U > > f ) => Internal.FlatMap( self, new SortedSet< U >(), f );
 
-        public static SortedSet< U > CompactMap< T, U >( this SortedSet< T > self, Func< T, U? > f ) where U: class
-        {
-            return Internal.CompactMap( self, new SortedSet< U >(), f );
-        }
+        public static SortedSet< U > CompactMap< T, U >( this SortedSet< T > self, Func< T, U? > f ) where U: class => Internal.CompactMap( self, new SortedSet< U >(), f );
 
-        public static SortedSet< U > CompactMap< T, U >( this SortedSet< T > self, Func< T, U? > f ) where U: struct
-        {
-            return Internal.CompactMap( self, new SortedSet< U >(), f );
-        }
+        public static SortedSet< U > CompactMap< T, U >( this SortedSet< T > self, Func< T, U? > f ) where U: struct => Internal.CompactMap( self, new SortedSet< U >(), f );
 
-        public static SortedSet< T > Filter< T >( this SortedSet< T > self, Func< T, bool > f )
-        {
-            return Internal.Filter( self, new SortedSet< T >(), f );
-        }
+        public static SortedSet< T > Filter< T >( this SortedSet< T > self, Func< T, bool > f ) => Internal.Filter( self, new SortedSet< T >(), f );
 
-        public static U Reduce< T, U >( this SortedSet< T > self, U initialResult, Func< U, T, U > f )
-        {
-            return Internal.Reduce( self, initialResult, f );
-        }
+        public static U Reduce< T, U >( this SortedSet< T > self, U initialResult, Func< U, T, U > f ) => Internal.Reduce( self, initialResult, f );
     }
 }

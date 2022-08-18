@@ -29,35 +29,17 @@ namespace Functional
 {
     public static class ListExtensions
     {
-        public static List< U > Map< T, U >( this List< T > self, Func< T, U > f )
-        {
-            return Internal.Map( self, new List< U >(), f );
-        }
+        public static List< U > Map< T, U >( this List< T > self, Func< T, U > f ) => Internal.Map( self, new List< U >(), f );
 
-        public static List< U > FlatMap< T, U >( this List< T > self, Func< T, ICollection< U > > f )
-        {
-            return Internal.FlatMap( self, new List< U >(), f );
-        }
+        public static List< U > FlatMap< T, U >( this List< T > self, Func< T, ICollection< U > > f ) => Internal.FlatMap( self, new List< U >(), f );
 
-        public static List< U > CompactMap< T, U >( this List< T > self, Func< T, U? > f ) where U: class
-        {
-            return Internal.CompactMap( self, new List< U >(), f );
-        }
+        public static List< U > CompactMap< T, U >( this List< T > self, Func< T, U? > f ) where U: class => Internal.CompactMap( self, new List< U >(), f );
 
-        public static List< U > CompactMap< T, U >( this List< T > self, Func< T, U? > f ) where U: struct
-        {
-            return Internal.CompactMap( self, new List< U >(), f );
-        }
+        public static List< U > CompactMap< T, U >( this List< T > self, Func< T, U? > f ) where U: struct => Internal.CompactMap( self, new List< U >(), f );
 
-        public static List< T > Filter< T >( this List< T > self, Func< T, bool > f )
-        {
-            return Internal.Filter( self, new List< T >(), f );
-        }
+        public static List< T > Filter< T >( this List< T > self, Func< T, bool > f ) => Internal.Filter( self, new List< T >(), f );
 
-        public static U Reduce< T, U >( this List< T > self, U initialResult, Func< U, T, U > f )
-        {
-            return Internal.Reduce( self, initialResult, f );
-        }
+        public static U Reduce< T, U >( this List< T > self, U initialResult, Func< U, T, U > f ) => Internal.Reduce( self, initialResult, f );
 
         public static List< T > Sorted< T >( this List< T > self, Func< T, T, bool > predicate )
         {

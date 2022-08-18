@@ -29,34 +29,16 @@ namespace Functional
 {
     public static class HashSetExtensions
     {
-        public static HashSet< U > Map< T, U >( this HashSet< T > self, Func< T, U > f )
-        {
-            return Internal.Map( self, new HashSet< U >(), f );
-        }
+        public static HashSet< U > Map< T, U >( this HashSet< T > self, Func< T, U > f ) => Internal.Map( self, new HashSet< U >(), f );
 
-        public static HashSet< U > FlatMap< T, U >( this HashSet< T > self, Func< T, ICollection< U > > f )
-        {
-            return Internal.FlatMap( self, new HashSet< U >(), f );
-        }
+        public static HashSet< U > FlatMap< T, U >( this HashSet< T > self, Func< T, ICollection< U > > f ) => Internal.FlatMap( self, new HashSet< U >(), f );
 
-        public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U? > f ) where U: class
-        {
-            return Internal.CompactMap( self, new HashSet< U >(), f );
-        }
+        public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U? > f ) where U: class => Internal.CompactMap( self, new HashSet< U >(), f );
 
-        public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U? > f ) where U: struct
-        {
-            return Internal.CompactMap( self, new HashSet< U >(), f );
-        }
+        public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U? > f ) where U: struct => Internal.CompactMap( self, new HashSet< U >(), f );
 
-        public static HashSet< T > Filter< T >( this HashSet< T > self, Func< T, bool > f )
-        {
-            return Internal.Filter( self, new HashSet< T >(), f );
-        }
+        public static HashSet< T > Filter< T >( this HashSet< T > self, Func< T, bool > f ) => Internal.Filter( self, new HashSet< T >(), f );
 
-        public static U Reduce< T, U >( this HashSet< T > self, U initialResult, Func< U, T, U > f )
-        {
-            return Internal.Reduce( self, initialResult, f );
-        }
+        public static U Reduce< T, U >( this HashSet< T > self, U initialResult, Func< U, T, U > f ) => Internal.Reduce( self, initialResult, f );
     }
 }

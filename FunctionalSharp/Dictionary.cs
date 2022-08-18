@@ -51,10 +51,7 @@ namespace Functional
             return destination;
         }
 
-        public static List< U > Map< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f ) where TK : notnull
-        {
-            return Internal.Map( self, new List< U >(), f );
-        }
+        public static List< U > Map< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f ) where TK : notnull => Internal.Map( self, new List< U >(), f );
 
         public static List< U > FlatMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, ICollection< U > > f ) where TK : notnull
         {
@@ -81,15 +78,9 @@ namespace Functional
             return destination;
         }
 
-        public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: class
-        {
-            return Internal.CompactMap( self, new List< U >(), f );
-        }
+        public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: class => Internal.CompactMap( self, new List< U >(), f );
 
-        public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: struct
-        {
-            return Internal.CompactMap( self, new List< U >(), f );
-        }
+        public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: struct => Internal.CompactMap( self, new List< U >(), f );
 
         public static Dictionary< TK, U > CompactMapValues< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK: notnull where U: class
         {
@@ -141,14 +132,8 @@ namespace Functional
             return destination;
         }
 
-        public static Dictionary< TK, TV > Filter< TK, TV >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, bool > f ) where TK : notnull
-        {
-            return Internal.Filter( self, new Dictionary< TK, TV >(), f );
-        }
+        public static Dictionary< TK, TV > Filter< TK, TV >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, bool > f ) where TK : notnull => Internal.Filter( self, new Dictionary< TK, TV >(), f );
 
-        public static U Reduce< TK, TV, U >( this Dictionary< TK, TV > self, U initialResult, Func< U, KeyValuePair< TK, TV >, U > f ) where TK : notnull
-        {
-            return Internal.Reduce( self, initialResult, f );
-        }
+        public static U Reduce< TK, TV, U >( this Dictionary< TK, TV > self, U initialResult, Func< U, KeyValuePair< TK, TV >, U > f ) where TK : notnull => Internal.Reduce( self, initialResult, f );
     }
 }

@@ -29,34 +29,16 @@ namespace Functional
 {
     public static class LinkedListExtensions
     {
-        public static LinkedList< U > Map< T, U >( this LinkedList< T > self, Func< T, U > f )
-        {
-            return Internal.Map( self, new LinkedList< U >(), f );
-        }
+        public static LinkedList< U > Map< T, U >( this LinkedList< T > self, Func< T, U > f ) => Internal.Map( self, new LinkedList< U >(), f );
 
-        public static LinkedList< U > FlatMap< T, U >( this LinkedList< T > self, Func< T, ICollection< U > > f )
-        {
-            return Internal.FlatMap( self, new LinkedList< U >(), f );
-        }
+        public static LinkedList< U > FlatMap< T, U >( this LinkedList< T > self, Func< T, ICollection< U > > f ) => Internal.FlatMap( self, new LinkedList< U >(), f );
 
-        public static LinkedList< U > CompactMap< T, U >( this LinkedList< T > self, Func< T, U? > f ) where U: class
-        {
-            return Internal.CompactMap( self, new LinkedList< U >(), f );
-        }
+        public static LinkedList< U > CompactMap< T, U >( this LinkedList< T > self, Func< T, U? > f ) where U: class => Internal.CompactMap( self, new LinkedList< U >(), f );
 
-        public static LinkedList< U > CompactMap< T, U >( this LinkedList< T > self, Func< T, U? > f ) where U: struct
-        {
-            return Internal.CompactMap( self, new LinkedList< U >(), f );
-        }
+        public static LinkedList< U > CompactMap< T, U >( this LinkedList< T > self, Func< T, U? > f ) where U: struct => Internal.CompactMap( self, new LinkedList< U >(), f );
 
-        public static LinkedList< T > Filter< T >( this LinkedList< T > self, Func< T, bool > f )
-        {
-            return Internal.Filter( self, new LinkedList< T >(), f );
-        }
+        public static LinkedList< T > Filter< T >( this LinkedList< T > self, Func< T, bool > f ) => Internal.Filter( self, new LinkedList< T >(), f );
 
-        public static U Reduce< T, U >( this LinkedList< T > self, U initialResult, Func< U, T, U > f )
-        {
-            return Internal.Reduce( self, initialResult, f );
-        }
+        public static U Reduce< T, U >( this LinkedList< T > self, U initialResult, Func< U, T, U > f ) => Internal.Reduce( self, initialResult, f );
     }
 }

@@ -29,35 +29,17 @@ namespace Functional
 {
     public static class ArrayExtensions
     {
-        public static U[] Map< T, U >( this T[] self, Func< T, U > f )
-        {
-            return Internal.Map( self, new List< U >(), f ).ToArray();
-        }
+        public static U[] Map< T, U >( this T[] self, Func< T, U > f ) => Internal.Map( self, new List< U >(), f ).ToArray();
 
-        public static U[] FlatMap< T, U >( this T[] self, Func< T, ICollection< U > > f )
-        {
-            return Internal.FlatMap( self, new List< U >(), f ).ToArray();
-        }
+        public static U[] FlatMap< T, U >( this T[] self, Func< T, ICollection< U > > f ) => Internal.FlatMap( self, new List< U >(), f ).ToArray();
 
-        public static U[] CompactMap< T, U >( this T[] self, Func< T, U? > f ) where U: class
-        {
-            return Internal.CompactMap( self, new List< U >(), f ).ToArray();
-        }
+        public static U[] CompactMap< T, U >( this T[] self, Func< T, U? > f ) where U: class => Internal.CompactMap( self, new List< U >(), f ).ToArray();
 
-        public static U[] CompactMap< T, U >( this T[] self, Func< T, U? > f ) where U: struct
-        {
-            return Internal.CompactMap( self, new List< U >(), f ).ToArray();
-        }
+        public static U[] CompactMap< T, U >( this T[] self, Func< T, U? > f ) where U: struct => Internal.CompactMap( self, new List< U >(), f ).ToArray();
 
-        public static T[] Filter< T >( this T[] self, Func< T, bool > f )
-        {
-            return Internal.Filter( self, new List< T >(), f ).ToArray();
-        }
+        public static T[] Filter< T >( this T[] self, Func< T, bool > f ) => Internal.Filter( self, new List< T >(), f ).ToArray();
 
-        public static U Reduce< T, U >( this T[] self, U initialResult, Func< U, T, U > f )
-        {
-            return Internal.Reduce( self, initialResult, f );
-        }
+        public static U Reduce< T, U >( this T[] self, U initialResult, Func< U, T, U > f ) => Internal.Reduce( self, initialResult, f );
 
         public static T[] Sorted< T >( this T[] self, Func< T, T, bool > predicate )
         {
