@@ -39,10 +39,10 @@ namespace FunctionalSharp_Test
         {
             LinkedList< int > input = new LinkedList< int >();
 
-            input.AddLast( 0 );
-            input.AddLast( 1 );
-            input.AddLast( 2 );
-            input.AddLast( 42 );
+            _ = input.AddLast( 0 );
+            _ = input.AddLast( 1 );
+            _ = input.AddLast( 2 );
+            _ = input.AddLast( 42 );
 
             LinkedList< string > output = input.Map( ( o ) => o.ToString() );
 
@@ -58,9 +58,9 @@ namespace FunctionalSharp_Test
         {
             LinkedList< int[] > input = new LinkedList< int[] >();
 
-            input.AddLast( new int[] { 0, 1 } );
-            input.AddLast( new int[] { 2 } );
-            input.AddLast( new int[] { 42 } );
+            _ = input.AddLast( new int[] { 0, 1 } );
+            _ = input.AddLast( new int[] { 2 } );
+            _ = input.AddLast( new int[] { 42 } );
             
             LinkedList< int >    output1 = input.FlatMap( ( s ) => s );
             LinkedList< string > output2 = input.FlatMap( ( s ) => s.Map( ( o ) => o.ToString() ) );
@@ -83,10 +83,10 @@ namespace FunctionalSharp_Test
         {
             LinkedList< int > input = new LinkedList< int >();
 
-            input.AddLast( 0 );
-            input.AddLast( 1 );
-            input.AddLast( 2 );
-            input.AddLast( 42 );
+            _ = input.AddLast( 0 );
+            _ = input.AddLast( 1 );
+            _ = input.AddLast( 2 );
+            _ = input.AddLast( 42 );
 
             LinkedList< string > output = input.CompactMap( ( o ) => ( o == 1 || o == 2 ) ? null : o.ToString() );
 
@@ -100,10 +100,10 @@ namespace FunctionalSharp_Test
         {
             LinkedList< int > input = new LinkedList< int >();
 
-            input.AddLast( 0 );
-            input.AddLast( 1 );
-            input.AddLast( 2 );
-            input.AddLast( 42 );
+            _ = input.AddLast( 0 );
+            _ = input.AddLast( 1 );
+            _ = input.AddLast( 2 );
+            _ = input.AddLast( 42 );
 
             LinkedList< long > output = input.CompactMap( ( o ) => ( o == 1 || o == 2 ) ? ( long? )null : o );
 
@@ -117,10 +117,10 @@ namespace FunctionalSharp_Test
         {
             LinkedList< int > input = new LinkedList< int >();
 
-            input.AddLast( 0 );
-            input.AddLast( 1 );
-            input.AddLast( 2 );
-            input.AddLast( 42 );
+            _ = input.AddLast( 0 );
+            _ = input.AddLast( 1 );
+            _ = input.AddLast( 2 );
+            _ = input.AddLast( 42 );
 
             LinkedList< int > output = input.Filter( ( o ) => o != 1 && o != 2 );
 
@@ -134,10 +134,10 @@ namespace FunctionalSharp_Test
         {
             LinkedList< int > input = new LinkedList< int >();
 
-            input.AddLast( 0 );
-            input.AddLast( 1 );
-            input.AddLast( 2 );
-            input.AddLast( 42 );
+            _ = input.AddLast( 0 );
+            _ = input.AddLast( 1 );
+            _ = input.AddLast( 2 );
+            _ = input.AddLast( 42 );
 
             int res1 = input.Reduce( 0, ( i, o ) => i + o );
             int res2 = input.Reduce( 1, ( i, o ) => i + o );
