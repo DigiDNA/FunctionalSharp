@@ -53,7 +53,7 @@ namespace Functional
 
         public static List< U > Map< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U > f ) where TK : notnull
         {
-            return Functions.Map( self, new List< U >(), f );
+            return Internal.Map( self, new List< U >(), f );
         }
 
         public static List< U > FlatMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, ICollection< U > > f ) where TK : notnull
@@ -83,12 +83,12 @@ namespace Functional
 
         public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: class
         {
-            return Functions.CompactMap( self, new List< U >(), f );
+            return Internal.CompactMap( self, new List< U >(), f );
         }
 
         public static List< U > CompactMap< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK : notnull where U: struct
         {
-            return Functions.CompactMap( self, new List< U >(), f );
+            return Internal.CompactMap( self, new List< U >(), f );
         }
 
         public static Dictionary< TK, U > CompactMapValues< TK, TV, U >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, U? > f ) where TK: notnull where U: class
@@ -143,12 +143,12 @@ namespace Functional
 
         public static Dictionary< TK, TV > Filter< TK, TV >( this Dictionary< TK, TV > self, Func< KeyValuePair< TK, TV >, bool > f ) where TK : notnull
         {
-            return Functions.Filter( self, new Dictionary< TK, TV >(), f );
+            return Internal.Filter( self, new Dictionary< TK, TV >(), f );
         }
 
         public static U Reduce< TK, TV, U >( this Dictionary< TK, TV > self, U initialResult, Func< U, KeyValuePair< TK, TV >, U > f ) where TK : notnull
         {
-            return Functions.Reduce( self, initialResult, f );
+            return Internal.Reduce( self, initialResult, f );
         }
     }
 }

@@ -31,32 +31,32 @@ namespace Functional
     {
         public static U[] Map< T, U >( this T[] self, Func< T, U > f )
         {
-            return Functions.Map( self, new List< U >(), f ).ToArray();
+            return Internal.Map( self, new List< U >(), f ).ToArray();
         }
 
         public static U[] FlatMap< T, U >( this T[] self, Func< T, ICollection< U > > f )
         {
-            return Functions.FlatMap( self, new List< U >(), f ).ToArray();
+            return Internal.FlatMap( self, new List< U >(), f ).ToArray();
         }
 
         public static U[] CompactMap< T, U >( this T[] self, Func< T, U? > f ) where U: class
         {
-            return Functions.CompactMap( self, new List< U >(), f ).ToArray();
+            return Internal.CompactMap( self, new List< U >(), f ).ToArray();
         }
 
         public static U[] CompactMap< T, U >( this T[] self, Func< T, U? > f ) where U: struct
         {
-            return Functions.CompactMap( self, new List< U >(), f ).ToArray();
+            return Internal.CompactMap( self, new List< U >(), f ).ToArray();
         }
 
         public static T[] Filter< T >( this T[] self, Func< T, bool > f )
         {
-            return Functions.Filter( self, new List< T >(), f ).ToArray();
+            return Internal.Filter( self, new List< T >(), f ).ToArray();
         }
 
         public static U Reduce< T, U >( this T[] self, U initialResult, Func< U, T, U > f )
         {
-            return Functions.Reduce( self, initialResult, f );
+            return Internal.Reduce( self, initialResult, f );
         }
 
         public static T[] Sorted< T >( this T[] self, Func< T, T, bool > predicate )

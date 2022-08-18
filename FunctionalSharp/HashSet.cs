@@ -31,32 +31,32 @@ namespace Functional
     {
         public static HashSet< U > Map< T, U >( this HashSet< T > self, Func< T, U > f )
         {
-            return Functions.Map( self, new HashSet< U >(), f );
+            return Internal.Map( self, new HashSet< U >(), f );
         }
 
         public static HashSet< U > FlatMap< T, U >( this HashSet< T > self, Func< T, ICollection< U > > f )
         {
-            return Functions.FlatMap( self, new HashSet< U >(), f );
+            return Internal.FlatMap( self, new HashSet< U >(), f );
         }
 
         public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U? > f ) where U: class
         {
-            return Functions.CompactMap( self, new HashSet< U >(), f );
+            return Internal.CompactMap( self, new HashSet< U >(), f );
         }
 
         public static HashSet< U > CompactMap< T, U >( this HashSet< T > self, Func< T, U? > f ) where U: struct
         {
-            return Functions.CompactMap( self, new HashSet< U >(), f );
+            return Internal.CompactMap( self, new HashSet< U >(), f );
         }
 
         public static HashSet< T > Filter< T >( this HashSet< T > self, Func< T, bool > f )
         {
-            return Functions.Filter( self, new HashSet< T >(), f );
+            return Internal.Filter( self, new HashSet< T >(), f );
         }
 
         public static U Reduce< T, U >( this HashSet< T > self, U initialResult, Func< U, T, U > f )
         {
-            return Functions.Reduce( self, initialResult, f );
+            return Internal.Reduce( self, initialResult, f );
         }
     }
 }

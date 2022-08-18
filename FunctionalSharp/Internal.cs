@@ -27,7 +27,7 @@ using System.Collections.Generic;
 
 namespace Functional
 {
-    internal static class Functions
+    internal static class Internal
     {
         internal static R Map< T, U, R >( ICollection< T > source, R destination, Func< T, U > f ) where R: ICollection< U >
         {
