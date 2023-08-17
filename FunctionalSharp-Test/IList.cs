@@ -67,5 +67,16 @@ namespace FunctionalSharp_Test
             Assert.AreEqual( 0,  output[ 0 ] );
             Assert.AreEqual( 42, output[ 1 ] );
         }
+
+        [TestMethod]
+        public void TestFilter()
+        {
+            IList< int > input  = new List< int > { 0, 1, 2, 42 };
+            IList< int > output = input.Filter( ( o ) => o != 1 && o != 2 );
+
+            Assert.AreEqual( 2,  output.Count );
+            Assert.AreEqual( 0,  output[ 0 ] );
+            Assert.AreEqual( 42, output[ 1 ] );
+        }
     }
 }

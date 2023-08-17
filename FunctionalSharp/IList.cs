@@ -68,5 +68,7 @@ namespace Functional
 
             return result;
         }
+
+        public static IList< T > Filter< T >( this IList< T > self, Func< T, bool > f ) => Internal.Filter( self, new List< T >(), f );
     }
 }
