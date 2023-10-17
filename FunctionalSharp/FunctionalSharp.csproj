@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFrameworks>net462;netcoreapp3.1;net5.0-windows</TargetFrameworks>
         <Authors>DigiDNA</Authors>
-        <Copyright>Copyright ©  2022</Copyright>
+        <Copyright>Copyright © 2023</Copyright>
         <LangVersion>8.0</LangVersion>
         <Nullable>enable</Nullable>
         <WarningsAsErrors>nullable;CS8600;CS8602;CS8603;CS8625</WarningsAsErrors>
@@ -12,7 +12,7 @@
         <Description>A set of convenience functional-style utilities to make C# code more similar to Swift.</Description>
         <RepositoryUrl>https://github.com/DigiDNA/FunctionalSharp</RepositoryUrl>
         <PackageProjectUrl>https://github.com/DigiDNA/FunctionalSharp</PackageProjectUrl>
-        <Version>2.0.4</Version>
+        <Version>2.0.5</Version>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
