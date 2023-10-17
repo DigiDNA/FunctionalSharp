@@ -80,5 +80,25 @@ namespace FunctionalSharp_Test
             Assert.AreEqual( 0,  list[ 0 ] );
             Assert.AreEqual( 42, list[ 1 ] );
         }
+
+        [TestMethod]
+        public void TestEnumerated()
+        {
+            IEnumerable< string >                      input  = new List< string > { "foo", "bar", "hello", "world" };
+            IEnumerable< KeyValuePair< int, string > > output = input.Enumerated();
+            List< KeyValuePair< int, string > >        list   = new List< KeyValuePair< int, string > >( output );
+
+            Assert.AreEqual( 4, list.Count );
+            
+            Assert.AreEqual( 0, list[ 0 ].Key );
+            Assert.AreEqual( 1, list[ 1 ].Key );
+            Assert.AreEqual( 2, list[ 2 ].Key );
+            Assert.AreEqual( 3, list[ 3 ].Key );
+
+            Assert.AreEqual( "foo",   list[ 0 ].Value );
+            Assert.AreEqual( "bar",   list[ 1 ].Value );
+            Assert.AreEqual( "hello", list[ 2 ].Value );
+            Assert.AreEqual( "world", list[ 3 ].Value );
+        }
     }
 }

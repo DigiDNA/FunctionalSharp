@@ -68,5 +68,18 @@ namespace Functional
 
             return result;
         }
+
+        public static IEnumerable< KeyValuePair< int, T > > Enumerated< T >( this IEnumerable< T > self )
+        {
+            int                            offset = 0;
+            List< KeyValuePair< int, T > > result = new List< KeyValuePair< int, T > >();
+
+            foreach( T o in self )
+            {
+                result.Add( new KeyValuePair< int, T >( offset++, o ) );
+            }
+
+            return result;
+        }
     }
 }
