@@ -69,7 +69,7 @@ namespace Functional
             return result;
         }
 
-        public static IEnumerable< KeyValuePair< int, T > > Enumerated< T >( this IEnumerable< T > self )
+        public static List< KeyValuePair< int, T > > Enumerated< T >( this IEnumerable< T > self )
         {
             int                            offset = 0;
             List< KeyValuePair< int, T > > result = new List< KeyValuePair< int, T > >();
